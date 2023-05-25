@@ -3,8 +3,6 @@ const display = document.getElementById("display");
 const result = document.querySelector(".result");
 const methodForNumbers = document.querySelectorAll(".method button");
 
-let outcome = 0;
-
 var flag = true;
 
 let firstVar = 0;
@@ -46,9 +44,28 @@ methodForNumbers.forEach((element) => {
         choice = 4;
         Method();
         break;
-    }
+      case "C":
+        Method();
+        firstVar = 0;
+        secondVar = 0;
+        choice = 0;
+        break;
+      case "CE":
+        console.log("CE");
+        break;
+      case ",":
+        console.log(",");
+        break;
+      case "+/-":
+        console.log("+/-");
+        break;
+    } 
   });
 });
+
+window.addEventListener("keydown", (event) =>{
+  console.log(event.code);
+})
 
 function Method() {
   firstVar = Number(temp);
@@ -57,31 +74,35 @@ function Method() {
 }
 
 result.addEventListener("click", () => {
+  let outcome = 0;
   secondVar = Number(temp);
   switch (choice) {
     case 0:
       break;
     case 1:
       outcome = firstVar + secondVar;
-      finalResult();
+      finalResult(outcome);
+      firstVar = outcome;
       break;
     case 2:
       outcome = firstVar - secondVar;
-      finalResult();
+      finalResult(outcome);
+      firstVar = outcome;
       break;
     case 3:
       outcome = firstVar * secondVar;
-      finalResult();
+      finalResult(outcome);
+      firstVar = outcome;
       break;
     case 4:
       outcome = firstVar / secondVar;
-      finalResult();
+      finalResult(outcome);
+      firstVar = outcome;
       break;
   }
 });
 
-function finalResult() {
-  display.textContent = outcome;
+function finalResult(finalNumber) {
+  display.textContent = finalNumber;
   flag = false;
-  choice = 0;
 }
