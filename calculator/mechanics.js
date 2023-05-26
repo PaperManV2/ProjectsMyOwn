@@ -2,6 +2,7 @@ const numbers = document.querySelectorAll(".number button");
 const display = document.getElementById("display");
 const result = document.querySelector(".result");
 const methodForNumbers = document.querySelectorAll(".method button");
+const methodBackspace = document.getElementById("backspace");
 
 var flag = true;
 
@@ -24,7 +25,10 @@ numbers.forEach((element) => {
 
 methodForNumbers.forEach((element) => {
   element.addEventListener("click", () => {
-    switch (element.textContent) {
+    const BS =
+      '<img class="backspace" src="pictures/backspace.svg" alt="backspace">';
+
+    switch (element.innerHTML.trim()) {
       case "+":
         choice = 1;
         Method();
@@ -44,28 +48,47 @@ methodForNumbers.forEach((element) => {
         choice = 4;
         Method();
         break;
+
       case "C":
         Method();
         firstVar = 0;
         secondVar = 0;
         choice = 0;
         break;
+
       case "CE":
         console.log("CE");
         break;
+
       case ",":
         console.log(",");
         break;
+
       case "+/-":
-        console.log("+/-");
+        if (Number(display.textContent) != 0) {
+          if (Number(display.textContent) > 0) {
+            display.textContent = "-" + display.textContent;
+            temp = Number(display.textContent);
+          } else {
+            display.textContent = display.textContent.slice(1);
+            temp = Number(display.textContent);
+          }
+        }
+        console.log(temp);
         break;
-    } 
+
+      case BS:
+        if (Number(display.textContent) != 0) {
+          display.textContent = display.textContent.slice(0, -1);
+        }
+        break;
+    }
   });
 });
 
-window.addEventListener("keydown", (event) =>{
+window.addEventListener("keydown", (event) => {
   console.log(event.code);
-})
+});
 
 function Method() {
   firstVar = Number(temp);
