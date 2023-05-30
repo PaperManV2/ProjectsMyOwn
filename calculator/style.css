@@ -56,6 +56,8 @@ button {
   padding: 15px;
   padding-top: 30px;
   text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #keyboard {
