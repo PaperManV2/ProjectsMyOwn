@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <label id="searchSection">
+      <input class="searchBar" type="search" placeholder="Search" />
+    </label>
+    <ul id="listOfNotes">
+      {% for note in notes %}
+      <li>
+        <div class="note">
+          <h1>{{ note.name }}</h1>
+          {{ note.content }}
+          <button class="noteOff" onclick="removeNote('{{ note.name }}')">
+            <svg>
+              <use
+                href="{{ url_for('static', filename='images/icons.svg')}}#icon-plus"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <button id="add">
+      <svg>
+        <use
+          href="{{ url_for('static', filename='images/icons.svg')}}#icon-plus"
+        ></use>
+      </svg>
+    </button>
+    <div id="overlay" class="hidden">
+      <div id="modal">
+        <button id="modalOff">
+          <svg>
+            <use
+              href="{{ url_for('static', filename='images/icons.svg')}}#icon-plus"
+            ></use>
+          </svg>
+        </button>
+        <textarea></textarea
+        ><button id="addToList">
+          <svg>
+            <use
+              href="{{ url_for('static', filename='images/icons.svg')}}#icon-plus"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+  </body>
+</html>
