@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .block {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        /* margin-top: 20px; */
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="block"></div>
+  </body>
+  <script>
+    const block = document.querySelector(".block").getBoundingClientRect();
+
+    console.log([block.left, block.top, block.right, block.bottom]);
+  </script>
+</html>
