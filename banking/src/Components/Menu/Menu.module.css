@@ -1,0 +1,95 @@
+.wrapper {
+  position: fixed;
+  z-index: 99;
+  background-color: #ccc5b9;
+  width: 80%;
+  height: 100%;
+  transition: transform 0.2s;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 2px 2px 6px rgba(64, 61, 57, 0.8);
+  font-family: 'National Park', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #252422;
+}
+
+.close {
+  transform: translate(-110%);
+}
+
+.open {
+  transform: 0;
+}
+
+.menuTitle {
+  margin: 3px 0 0 0;
+  color: #eb5e28;
+  font-size: 25px;
+}
+
+.navigation {
+  width: calc(100% - 50px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px 25px 20px 25px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.navigation svg {
+  height: 90%;
+  aspect-ratio: 1;
+  fill: #eb5e28;
+}
+
+.navigation_btn_main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navigation_btn_main div,
+.navigation_btn_aside div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 30px;
+}
+
+.menuCloseBtn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 30px;
+  aspect-ratio: 1;
+}
+
+.menuCloseBtn::before {
+  display: flex;
+  content: '';
+  width: 80%;
+  height: 3px;
+  background-color: #eb5e28;
+  position: inherit;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 4px;
+}
+
+.menuCloseBtn::after {
+  display: flex;
+  content: '';
+  width: 80%;
+  height: 3px;
+  background-color: #eb5e28;
+  position: inherit;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-radius: 4px;
+}
