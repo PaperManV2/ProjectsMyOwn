@@ -1,7 +1,7 @@
 .wrapper {
   position: fixed;
   z-index: 99;
-  background-color: #ccc5b9;
+  background-color: #ccc5b9f6;
   width: 80%;
   height: 100%;
   transition: transform 0.2s;

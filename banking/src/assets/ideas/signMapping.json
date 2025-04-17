@@ -1,0 +1,31 @@
+{
+    "pl": {
+      "scale": "long",
+      "units": [
+        { "value": 4, "suffix": "bln" },
+        { "value": 3, "suffix": "mld" },
+        { "value": 2, "suffix": "mln" },
+        { "value": 1, "suffix": "tys" },
+        { "value": 0, "suffix": "" }
+      ]
+    },
+    "en": {
+      "scale": "short",
+      "units": [
+        { "value": 4, "suffix": "t" },
+        { "value": 3, "suffix": "b" },
+        { "value": 2, "suffix": "m" },
+        { "value": 1, "suffix": "k" },
+        { "value": 0, "suffix": "" }
+      ]
+    },
+    "hi": {
+      "scale": "indian",
+      "units": [
+        { "value": 2.66, "suffix": "Cr" },
+        { "value": 1.66, "suffix": "L" },
+        { "value": 1, "suffix": "k" },
+        { "value": 0, "suffix": "" }
+      ]
+    }
+  }
