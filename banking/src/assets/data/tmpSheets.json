@@ -1,71 +1,44 @@
-[
-  {
-    "wpłaty": {
-      "type": "row",
-      "entries": [
-        {
-          "id": 0,
-          "date": "2022-01-01",
-          "poduszka": 500,
-          "obligacje": 1000,
-          "krypto": 300
-        },
-        {
-          "id": 1,
-          "date": "2022-02-01",
-          "poduszka": 500,
-          "obligacje": 1000,
-          "krypto": 300
-        }
-      ]
-    }
+{
+  "daily budget": {
+    "settings": {
+      "mode": "expense"
+    },
+    "entries": [
+      {
+        "id": 0,
+        "date": "2025-01-01",
+        "time": "11:56",
+        "category-id": 1,
+        "title": "allegro.pl",
+        "value": 69.79,
+        "description": "naklejki NFC"
+      },
+      {
+        "id": 1,
+        "date": "2025-01-01",
+        "time": "12:15",
+        "category-id": 0,
+        "title": "LIDL CHROBREGO Wronki",
+        "value": 39.2,
+        "description": "codzienne zakupy"
+      }
+    ]
   },
-
-  {
-    "zysk": {
-      "type": "row",
-      "entries": [
-        {
-          "id": 0,
-          "date": "2025-01-01",
-          "poduszka": 500,
-          "obligacje": 1002.6,
-          "krypto": 289.56
-        },
-        {
-          "id": 1,
-          "date": "2025-02-01",
-          "poduszka": 500,
-          "obligacje": 1003.94,
-          "krypto": 272.18
-        }
-      ]
-    }
-  },
-
-  {
-    "codzienne wydatki": {
-      "type": "entry",
-      "entries": [
-        {
-          "id": 0,
-          "date": "2025-01-01",
-          "time": "11:56",
-          "category-id": 1,
-          "title": "allegro.pl",
-          "value": 69.79,
-          "description": "naklejki NFC"
-        },
-        {
-          "id": 1,
-          "date": "2025-01-01",
-          "time": "12:15",
-          "category-id": 0,
-          "title": "LIDL CHROBREGO Wronki",
-          "value": 39.2,
-          "description": "codzienne zakupy"
-        }
-      ]
-    }
+  "savings": {
+    "settings": {
+      "mode": "income"
+    },
+    "entries": [
+      {
+        "id": 0,
+        "date": "2025-01-01",
+        "value": 1000
+      },
+      {
+        "id": 1,
+        "date": "2025-02-01",
+        "value": 900
+      }
+    ]
   }
-]
+}

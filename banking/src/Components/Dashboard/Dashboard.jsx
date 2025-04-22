@@ -3,8 +3,8 @@ import css from './Dashboard.module.css'
 import unitSigns from '../../assets/data/signMapping.json'
 import tmpSheets from '../../assets/data/tmpSheets.json'
 import textFit from '../../assets/scripts/textFit'
+import getSheetSum from '../../assets/scripts/getSheetSum'
 import { useEffect, useState, useRef } from 'react'
-import Decimal from 'decimal.js'
 
 const Dashboard = ({ openMenu }) => {
   const accountBalance = 77777
@@ -41,43 +41,6 @@ const Dashboard = ({ openMenu }) => {
     setIsBalanceSimple((prev) => !prev)
   }
 
-  function getSheetSum(sheet) {
-    const entries = sheet.entries
-    let sum = 0
-
-    switch (sheet.type) {
-      case 'row': {
-        entries.forEach((entry) => {
-          for (const [key, value] of Object.entries(entry)) {
-            if (key === 'id' || key === 'date') continue
-            // console.log(value)
-            const a = new Decimal(String(value))
-            const b = new Decimal(String(sum))
-            sum = a.plus(String(b)).toString()
-          }
-        })
-
-        break
-      }
-      case 'entry': {
-        entries.forEach((entry) => {
-          const value = entry.value
-          const a = new Decimal(String(value))
-          const b = new Decimal(String(sum))
-          sum = a.plus(String(b)).toString()
-        })
-
-        break
-      }
-      default: {
-        console.log('potato')
-        break
-      }
-    }
-    console.log(sum)
-    return sum
-  }
-
   useEffect(() => {
     setSimpleBalance(simplifyNumber(accountBalance))
     setBalance(accountBalance)
@@ -105,13 +68,13 @@ const Dashboard = ({ openMenu }) => {
         <span className={css.currency}>PLN</span>
       </div>
       <ul className={css.sheetList}>
-        {tmpSheets.map((s, i) => {
+        {Object.entries(tmpSheets).map((s, i) => {
           return (
-            <li key={i} className={css.sheet}>
+            <li key={`dashboard-sheet-${i}`} className={css.sheet}>
               <div className={css.sheetTitle}>
-                <h2 className={css.sheetName}>{Object.keys(s)[0]}:</h2>
+                <h2 className={css.sheetName}>{s[0]}:</h2>
                 <span className={css.sheetValue}>
-                  <pre>{getSheetSum(Object.values(s)[0])}</pre>
+                  <pre>{getSheetSum(s)}</pre>
                 </span>
               </div>
             </li>
