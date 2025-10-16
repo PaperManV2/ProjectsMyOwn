@@ -1,0 +1,3 @@
+1. make a simple checking function to get info about position based on the coordinates of longtitude and latitude of the earth in or out of the certain border;
+2. make a little map with real earth coordinates with the functionality of changing the start position of the locator and the simple border + their coordinates 
+3. make a better version of constant checking the position of the locator to notify of leaving the border
